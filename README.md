@@ -1,6 +1,6 @@
 # Smart Motor Condition Monitoring System
 
-## Task 1: Data Analytics & Support Setup
+## Task 1 & 2: Data Analytics & Support Setup
 
 This repository contains the data profiling pipeline for parsing incoming motor telemetry data. The pipeline supports both offline simulation testing and a hot-swap transition to live cloud infrastructure.
 
@@ -86,17 +86,41 @@ print("==================================================")
 
 ---
 
+## 📊 Task 3: Univariate Exploratory Data Analysis (EDA)
+
+The file `univariate_eda.py` automatically scans every independent hardware telemetry channel and profiles its underlying statistical structure. It generates split-screen visual charts to evaluate operational distributions and catch outliers.
+
+### Dependencies Setup
+To activate the advanced charting engine, make sure the statistical visualization package is installed:
+```bash
+pip install seaborn matplotlib pandas
+```
+
+### Feature Output Metrics
+When executed, this feature automatically outputs 6 separate high-resolution report images directly into the repository workspace folder:
+* `distribution_temperature.png` - Thermal bounds distribution
+* `distribution_humidity.png` - Ambient environmental moisture profile
+* `distribution_current.png` - Amperage load distribution
+* `distribution_voltage.png` - Line voltage feed stability profile
+* `distribution_power.png` - Real-time kilowatt consumption spread
+* `distribution_vibration.png` - Structural mechanical vibration metrics
+
+### Visual Layout Design per Channel
+* **Left Panel (Histogram + KDE Wave):** Maps value frequencies and smooth probability density paths to analyze hardware balance stability.
+* **Right Panel (Box Plot):** Pinpoints operational medians, quartiles, and maps isolated anomaly spikes as explicit outlier data points.
+
+---
+
 ## Security & Git Operations
 Your workspace includes a .gitignore file that masks firebase-credentials.json. This ensures your private team database access keys remain safe on your personal computer and are never accidentally uploaded to GitHub.
 
 ### Save your current progress locally:
-Run these commands in your VS Code terminal to finalize Task 1:
+Run these commands in your VS Code terminal to finalize your branch ledger:
 
 ```bash
-# 1. Stage all your current project files and documentation
+# 1. Stage all your current project files, graphs, and documentation
 git add .
 
 # 2. Permanently save the progress to your local task branch
-git commit -m "feat: complete task 1 - load live json stream and generate profiles"
+git commit -m "feat: complete task 3 - implement automated univariate distribution pipelines"
 ```
-
