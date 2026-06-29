@@ -1,0 +1,5 @@
+fault_type,Raw_Sample_Count,Percentage_Proportion
+Normal,16,80.0
+Bearing Failure,2,10.0
+Shaft Misalignment,1,5.0
+Insulation Degradation,1,5.0

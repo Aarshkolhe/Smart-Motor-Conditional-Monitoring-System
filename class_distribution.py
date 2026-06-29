@@ -72,13 +72,10 @@ distribution_report = pd.DataFrame({
 print(distribution_report)
 print("-" * 40)
 
-# AUTOMATED PATH ENFORCEMENT FOR REPORT EXPORT
-script_directory = os.path.dirname(os.path.abspath(__file__))
-report_path = os.path.join(script_directory, 'class_imbalance_report.csv')
-
 # Export the report directly as a physical reference log table
+report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'class_imbalance_report.csv')
 distribution_report.to_csv(report_path)
-print(f"Success! Distribution audit logs saved to: '{report_path}'")
+print(f"✅ Distribution audit logs saved to: '{report_path}'")
 
 # ==========================================================
 # 3. GENERATE TARGET DISTRIBUTION PLOTS
@@ -95,11 +92,12 @@ plt.xlabel('Motor Operating Classification/Fault Type', fontsize=11)
 plt.ylabel('Total Collected Sample Count', fontsize=11)
 plt.grid(axis='y', linestyle='--', alpha=0.5)
 
-# AUTOMATED PATH ENFORCEMENT FOR CHART EXPORT
-image_save_path = os.path.join(script_directory, 'fault_class_distribution.png')
+# Calculate forced path to ensure it drops directly into the inner repository folder on autopilot
+script_dir = os.path.dirname(os.path.abspath(__file__))
+image_save_path = os.path.join(script_dir, 'fault_class_distribution.png')
 
 plt.savefig(image_save_path, dpi=300, bbox_inches='tight')
 plt.close()
 
-print(f"Success! Visualization exported natively to: '{image_save_path}'")
+print(f"✅ Success! Visualization exported natively to: '{image_save_path}'")
 print("==================================================")

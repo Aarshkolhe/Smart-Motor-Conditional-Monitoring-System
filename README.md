@@ -124,3 +124,17 @@ git add .
 # 2. Permanently save the progress to your local task branch
 git commit -m "feat: complete task 3 - implement automated univariate distribution pipelines"
 ```
+
+---
+
+## 🎛️ Task 4: Target Class Imbalance Quantification
+
+The script `class_distribution.py` analyzes the categorical split of incoming target flags to map and calculate representation limits across hardware operating profiles.
+
+### Analytical Output Metrics
+When run, the engine runs completely on autopilot and outputs two critical analytical assets directly inside this repository folder:
+* `class_imbalance_report.csv` - Data matrix detailing absolute counts and percentage proportions across available operating modes.
+* `fault_class_distribution.png` - Categorical distribution graph mapping data splits for senior audit validation.
+
+### Core Implementation Significance
+This module provides the core metric auditing foundation required before training machine learning classifiers. By surfacing severe minority class splits early, it prevents model skewing errors and guides future integration parameters.
