@@ -1,0 +1,6 @@
+record_id,field,error_type,value
+102.0,temperature,NaN/Null,
+103.0,vibration,NaN/Null,
+104.0,voltage,Range Anomaly,1400.0
+105.0,temperature,Range Anomaly,-99.0
+106.0,vibration,Infinity,inf
